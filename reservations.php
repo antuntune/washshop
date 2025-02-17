@@ -28,6 +28,10 @@ $userName = $_SESSION["name"];
 
     <!-- Here you can add more functionality, like fetching and displaying the user's reservations from the database -->
 
+    <a href="select_service.php">Make reservation</a>
+
+    <br>
+
     <a href="logout.php">Logout</a>
 </body>
 </html>
