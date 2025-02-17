@@ -41,7 +41,7 @@
             </select>
 
             <label for="date">Date:</label>
-              <input type="date" id="date" name="date" value="2025-02-19">
+              <input type="date" id="dateInput" name="date">
 
               <label for="h">Hour:</label>
               <select name="h" id="h">
@@ -66,5 +66,19 @@
               ]; ?>" />
 
         </form>
+
+        <!-- only for setting default day to today -->
+        <script>
+            // Create a new Date object for today
+            const today = new Date();
+
+            // Get the year, month, and day, and format them to YYYY-MM-DD
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+            const day = String(today.getDate()).padStart(2, '0');
+
+            // Set the value of the date input to today’s date in the format YYYY-MM-DD
+            document.getElementById('dateInput').value = `${year}-${month}-${day}`;
+        </script>
     </body>
 </html>

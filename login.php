@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ".";
             // Redirect or load a protected page, e.g., dashboard.php
             header("Location: reservations.php");
-            // exit();
+            exit();
         } else {
             echo "Invalid password.";
         }
