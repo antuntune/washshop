@@ -25,23 +25,20 @@
 
 
         <form action="validation.php" method="post">
-            <label for="mode">Mode: </label>
-            <select name="mode_id" id="mode">
-        <?php while ($row = $result->fetch_assoc()) {
-            //echo var_dump($row) . "<br><br>";
-            echo "<option value='" .
-                $row["modeId"] .
-                "'>" .
-                htmlspecialchars($row["name"]) .
-                " - " .
-                htmlspecialchars($row["price"]) .
-                "€" .
-                " (" .
-                htmlspecialchars($row["duration"]) .
-                "min)" .
-                "</option>";
-        } ?>
-            </select>
+            <label>Mode:</label><br>
+                <?php while ($row = $result->fetch_assoc()) { ?>
+                    <label>
+                        <input type="radio" name="mode_id" value="<?php echo $row[
+                            "modeId"
+                        ]; ?>">
+                        <?php echo htmlspecialchars($row["name"]) .
+                            " - " .
+                            htmlspecialchars($row["price"]) .
+                            "€ (" .
+                            htmlspecialchars($row["duration"]) .
+                            "min)"; ?>
+                    </label><br>
+                <?php } ?>
 
             <label for="date">Date:</label>
               <input type="date" id="dateInput" name="date">

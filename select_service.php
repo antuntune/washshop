@@ -10,10 +10,14 @@
         <h1>Select Service</h1>
         <form action="select_mode.php" method="post">
 
-            <select name="service" id="">
-                <option value="washing">Washing</option>
-                <option value="drying">Drying</option>
-            </select>
+            <label>
+                    <input type="radio" name="service" value="washing">
+                    Washing
+                </label><br>
+                <label>
+                    <input type="radio" name="service" value="drying">
+                    Drying
+                </label>
 
             <input type="submit">
         </form>
