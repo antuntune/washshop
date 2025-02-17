@@ -35,7 +35,10 @@
                 htmlspecialchars($row["name"]) .
                 " - " .
                 htmlspecialchars($row["price"]) .
-                " €" .
+                "€" .
+                " (" .
+                htmlspecialchars($row["duration"]) .
+                "min)" .
                 "</option>";
         } ?>
             </select>
