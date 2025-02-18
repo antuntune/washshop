@@ -85,7 +85,7 @@
         </div>
 
 
-        <script type="text/javascript" src="qrcode.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
         <script type="text/javascript">
         new QRCode(document.getElementById("qrcode"), "<?php echo $details[
             "qrcode"
