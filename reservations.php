@@ -11,6 +11,30 @@ if (!isset($_SESSION["user_id"]) || !isset($_SESSION["name"])) {
 // Access session data
 $userId = $_SESSION["user_id"];
 $userName = $_SESSION["name"];
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "washshop";
+
+$conn = new mysqli($host, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT
+    r.*,
+    m.name
+FROM
+    reservations r
+INNER JOIN
+    modes m
+ON
+    r.mode_id = m.modeId
+WHERE
+    r.user_id = $userId;";
+
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -20,18 +44,61 @@ $userName = $_SESSION["name"];
     <title>Reservations</title>
 </head>
 <body>
+    <?php include "navbar.php"; ?>
     <h1>Your Reservations</h1>
+    <h3>Future Reservations: </h3>
+<?php
+while ($row = $result->fetch_assoc()) {
+    // Remove hyphens from the date string
+    $dateWithoutHyphens = str_replace("-", "", $row["date"]);
+    // Convert the resulting string to an integer
+    $dateAsInt = (int) $dateWithoutHyphens;
 
-    <!-- Echo out session data -->
-    <p>User ID: <?php echo htmlspecialchars($userId); ?></p>
-    <p>Username: <?php echo htmlspecialchars($userName); ?></p>
+    $resId = $row["id"];
 
+    if ($dateAsInt >= date("Ymd")) {
+        echo "" .
+            "<div><p>" .
+            htmlspecialchars($row["date"]) .
+            "</p><p>" .
+            htmlspecialchars($row["time"]) .
+            "</p><p>" .
+            htmlspecialchars($row["name"]) .
+            "</p>
+            <form action='res_details.php' method='post'>
+            <input type='submit' value='Details'>
+            <input type='hidden' value='$resId' name='resId'>
+            </form>
+
+            </div>";
+    }
+}
+
+$result2 = $conn->query($sql);
+?>
+
+<h3>Past Reservations: </h3>
+<?php while ($row = $result2->fetch_assoc()) {
+    // Remove hyphens from the date string
+    $dateWithoutHyphens = str_replace("-", "", $row["date"]);
+    // Convert the resulting string to an integer
+    $dateAsInt = (int) $dateWithoutHyphens;
+    if ($dateAsInt < date("Ymd")) {
+        echo "" .
+            "<div><p>" .
+            htmlspecialchars($row["date"]) .
+            "</p><p>" .
+            htmlspecialchars($row["time"]) .
+            "</p><p>" .
+            htmlspecialchars($row["name"]) .
+            "</p></div>";
+    }
+} ?>
     <!-- Here you can add more functionality, like fetching and displaying the user's reservations from the database -->
 
     <a href="select_service.php">Make reservation</a>
 
     <br>
 
-    <a href="logout.php">Logout</a>
 </body>
 </html>

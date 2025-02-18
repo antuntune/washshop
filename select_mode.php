@@ -6,6 +6,24 @@
         <title>Select Service</title>
     </head>
     <body>
+
+        <?php
+        session_start();
+
+        // Check if the user is logged in by ensuring session variables are set
+        if (!isset($_SESSION["user_id"]) || !isset($_SESSION["name"])) {
+            // If the user is not logged in, redirect to the login page
+            header("Location: login.php");
+            exit();
+        }
+
+        // Access session data
+        $userId = $_SESSION["user_id"];
+        $userName = $_SESSION["name"];
+        ?>
+
+        <?php include "navbar.php"; ?>
+
         <h1>Select Mode and Time</h1>
         <?php
         $host = "localhost";
@@ -61,9 +79,7 @@
 
               <input type="submit">
 
-              <input type="hidden" name="service" id="hiddenField" value="<?php echo $_POST[
-                  "service"
-              ]; ?>" />
+              <input type="hidden" name="service" id="hiddenField" value="<?php echo $service; ?>" />
 
         </form>
 
