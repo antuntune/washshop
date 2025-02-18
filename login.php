@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
 
         // Compare input password with the password from the database
-        if ($row["password"] === $inputPassword) {
+        if (password_verify($inputPassword, $row["password"])) {
             $_SESSION["user_id"] = $row["id"];
             $_SESSION["name"] = $row["name"];
             echo "Login successful! Welcome, " .
@@ -64,6 +64,10 @@ $conn->close();
         <input type="password" id="password" name="password" required>
         <br><br>
         <input type="submit" value="Login">
+    </form>
+
+    <form method="" action="registration.php">
+        <input type="submit" value="Registration">
     </form>
 </body>
 </html>
