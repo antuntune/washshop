@@ -1,0 +1,99 @@
+header{
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: #1b1d4b;
+    height: 130px;
+}
+
+.logo-div{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo-div h1{
+    color: #24bdf9;
+}
+
+#logo {
+    width: 75px;
+    position: relative;
+    margin: 10px;
+}
+
+#wave1{
+    height: 40px;
+    position: fixed;
+    left: 0;
+    top: 130px;
+}
+
+#wave2{
+    height: 40px;
+    position: fixed;
+    left: 1896px;
+    top: 130px;
+}
+
+main {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 50px;
+}
+
+main h1{
+    margin-top: 40px;
+}
+
+.button {
+    font-size: 20px;
+    border: none;
+    border-radius: 25%;
+    background-color:white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    transition: 0.2;
+}
+#registation{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+
+#login-button{
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 15px;
+}
+
+.button:hover{
+   box-shadow: 2px 2px 8px rgba(190, 233, 248, 0.8); /* Drop shadow */
+   background-color: rgba(144, 197, 209, 0.137);
+   opacity: 0.7;
+
+}
+
+.button:active{
+    color: white;
+    background-color: #1b1d4b;
+    box-shadow: 2px 2px 8px rgba(190, 233, 248, 0.2); /* Drop shadow */
+    opacity: 1;
+
+}
+
+.text-input{
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(176, 217, 255, 0.2); /* Drop shadow */
+    border-color: #eaf3ff;
+    font-size: 20px;
+    padding: 3px;
+}
+
+.white-container form{
+    width: 250px;
+}

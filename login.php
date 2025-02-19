@@ -54,20 +54,40 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <form method="post" action="">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <input type="submit" value="Login">
-    </form>
+    <header>
+        <div class="logo-div">
+            <img src="src/logo.svg" alt="logo" id="logo">
+            <h1>Lavandería Brillante</h1>            
+        </div>
+        <img src="src/nav.svg" alt="logo" id="wave1">
+        <img src="src/nav.svg" alt="logo" id="wave2">
 
-    <form method="" action="registration.php">
-        <input type="submit" value="Registration">
-    </form>
+    </header>
+
+    <main>
+    <h1>Login</h1>
+        <div class="white-container">
+            <form method="post" action="">
+                <label for="name">Name:</label>
+                <input type="text" class="text-input" id="name" name="name" required>
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" class="text-input" id="password" name="password" required>
+                <br><br>
+                <input type="submit" value="Login" class="button" id="login-button">
+            </form>
+
+            <form method="" action="registration.php">
+                <input type="submit" value="Registration" class="button" id="registation">
+            </form>
+        </div>
+    </main>
+
+    
 </body>
 </html>
