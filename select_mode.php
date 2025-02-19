@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="select_mode.css">
         <title>Select Service</title>
     </head>
     <body>
@@ -45,26 +46,38 @@
         <main>
             <h1>New Reservation</h1>
             <div class="white-container">
+            <img src="src/step2.png" alt="" class="step">
+            <div class="container"></div>
 
         <form action="validation.php" method="post">
-            <label>Mode:</label><br>
+            <div class=form-left>
+                <h3>Mode:</h3>
+            <div class="radio-card-group">
                 <?php while ($row = $result->fetch_assoc()) { ?>
-                    <label>
+
                         <input type="radio" name="mode_id" value="<?php echo $row[
                             "modeId"
-                        ]; ?>">
-                        <?php echo htmlspecialchars($row["name"]) .
-                            " - " .
-                            htmlspecialchars($row["price"]) .
-                            "€ (" .
-                            htmlspecialchars($row["duration"]) .
-                            "min)"; ?>
-                    </label><br>
-                <?php } ?>
+                        ]; ?>" id="<?php echo $row["modeId"]; ?>">
 
+                            <label class="radio-card" for="<?php echo $row[
+                                "modeId"
+                            ]; ?>">
+                                <?php echo htmlspecialchars($row["name"]) .
+                                    " - " .
+                                    htmlspecialchars($row["price"]) .
+                                    "€ (" .
+                                    htmlspecialchars($row["duration"]) .
+                                    "min)"; ?>
+                    </label><br>
+
+                <?php } ?>
+            </div>
+            </div>
+            <div class="form-right">
+                <h3>Time:</h3>
             <label for="date">Date:</label>
               <input type="date" id="dateInput" name="date">
-
+              <div>
               <label for="h">Hour:</label>
               <select name="h" id="h">
                   <?php for ($i = 0; $i < 24; $i++) {
@@ -79,12 +92,11 @@
                   <option value="15">15</option>
                   <option value="30">30</option>
                   <option value="45">45</option>
-              </select>
+              </select></div>
+            </div>
+            <input type="submit" value="Next">
 
-              <input type="submit">
-
-              <input type="hidden" name="service" id="hiddenField" value="<?php echo $service; ?>" />
-
+            <input type="hidden" name="service" id="hiddenField" value="<?php echo $service; ?>" />
         </form>
         </div>
 </main>

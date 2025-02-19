@@ -3,14 +3,16 @@
 
 <nav>
     <div id="logo-div">
-    <img src="src/logo.svg" alt="logo" id="logo">
+    <a href="reservations.php"><img src="src/logo.svg" alt="logo" id="logo"></a>
     <h1>Lavandería Brillante</h1>
-    </div><div>
+    </div><div class="header-left">
     <a href="reservations.php">Reservations</a>
-    <i class="fa-solid fa-circle-user"></i>
-    <p><?php echo $_SESSION["name"]; ?></p>
-    <a href="logout.php">LOGOUT</a></div>
 
+    <div class="user">
+    <i class="fa-solid fa-circle-user"></i>
+    <span><?php echo $_SESSION["name"]; ?></span>
+    <a href="logout.php">LOGOUT</a></div>
+</div>
 
 
 </nav>

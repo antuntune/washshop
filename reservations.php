@@ -43,12 +43,20 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reservations.css">
     <title>Reservations</title>
 </head>
 <body>
     <?php include "navbar.php"; ?>
+    <main>
+        <div class="header">
     <h1>Your Reservations</h1>
-    <h3>Future Reservations: </h3>
+    <a href="select_service.php">Make reservation</a>
+        </div>
+    <div class="white-container">
+        <div class="container">
+    <h3>Upcoming</h3>
+    <div class="cards-group">
 <?php
 while ($row = $result->fetch_assoc()) {
     // Remove hyphens from the date string
@@ -60,15 +68,15 @@ while ($row = $result->fetch_assoc()) {
 
     if ($dateAsInt >= date("Ymd")) {
         echo "" .
-            "<div><p>" .
+            "<div class='res-card'><p class='date'>" .
             htmlspecialchars($row["date"]) .
-            "</p><p>" .
+            "</p><p class='time'>" .
             htmlspecialchars($row["time"]) .
-            "</p><p>" .
+            "</p><p class='mode-name'>" .
             htmlspecialchars($row["name"]) .
             "</p>
             <form action='res_details.php' method='post'>
-            <input type='submit' value='Details'>
+            <input type='submit' value='More details'>
             <input type='hidden' value='$resId' name='resId'>
             </form>
 
@@ -78,8 +86,9 @@ while ($row = $result->fetch_assoc()) {
 
 $result2 = $conn->query($sql);
 ?>
-
-<h3>Past Reservations: </h3>
+    </div>
+<h3>Past</h3>
+<div class="cards-group">
 <?php while ($row = $result2->fetch_assoc()) {
     // Remove hyphens from the date string
     $dateWithoutHyphens = str_replace("-", "", $row["date"]);
@@ -87,20 +96,20 @@ $result2 = $conn->query($sql);
     $dateAsInt = (int) $dateWithoutHyphens;
     if ($dateAsInt < date("Ymd")) {
         echo "" .
-            "<div><p>" .
+            "<div class='res-card'><p class='date'>" .
             htmlspecialchars($row["date"]) .
-            "</p><p>" .
+            "</p><p class='time'>" .
             htmlspecialchars($row["time"]) .
-            "</p><p>" .
+            "</p><p class='mode-name'>" .
             htmlspecialchars($row["name"]) .
             "</p></div>";
     }
 } ?>
     <!-- Here you can add more functionality, like fetching and displaying the user's reservations from the database -->
 
-    <a href="select_service.php">Make reservation</a>
-
-    <br>
-
+</div>
+        </div>
+    </div>
+    </main>
 </body>
 </html>

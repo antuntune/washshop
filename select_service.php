@@ -30,7 +30,9 @@
         <h1>New Reservation</h1>
         <div class="white-container">
             <img src="src/step1.png" alt="" class="step">
+            <div class="container">
 
+            <h2>What do you want to do?</h2>
         <form action="select_mode.php" method="post">
 
                 <div class="radio-card-group">
@@ -49,8 +51,9 @@
 
                     </div>
 
-            <input type="submit">
+            <input type="submit" value="Next">
         </form>
+            </div>
         </div>
         </main>
     </body>

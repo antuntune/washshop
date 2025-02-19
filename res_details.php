@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="res_details.css">
         <title>Document</title>
     </head>
     <body>
@@ -58,32 +60,36 @@
             strtotime($details["time"]) + $details["duration"] * 60
         );
         ?>
+        <main>
         <h1>Reservation Details</h1>
-        <div>
+        <div class="white-container">
+        <div class="container">
+            <div class="left">
+                <h2>QR Code</h2>
+                <div id="qrcode" class="qrcode"></div>
+                <p>Scan this QR code at the laundry to access your reservation.</p>
 
+            </div>
+            <div class="right">
+                <h2>Service Type</h2>
+                <p><?php echo $details["name"]; ?></p>
+                <h2>Time</h2>
+                <p></p>
+                <h3>Begintime</h3>
+                <p><?php echo $details["time"]; ?></p>
+                <h3>Endtime</h3>
+                <p><?php echo $end_time; ?></p>
+                <h3>Duration</h3>
+                <p><?php echo $details["duration"]; ?> min</p>
 
-            <h2>Service Type</h2>
-            <p><?php echo $details["name"]; ?></p>
+                <h2>Price</h2>
+                <p><?php echo $details["price"]; ?> €</p>
+            </div>
 
-            <h2>Time</h2>
-            <p></p>
-            <h3>Begintime</h3>
-            <p><?php echo $details["time"]; ?></p>
-            <h3>Endtime</h3>
-            <p><?php echo $end_time; ?></p>
-            <h3>Duration</h3>
-            <p><?php echo $details["duration"]; ?></p>
-
-
-
-
-            <h2>Price</h2>
-            <p><?php echo $details["price"]; ?></p>
-
-            <div id="qrcode"></div>
 
         </div>
-
+        </div>
+        </main>
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
         <script type="text/javascript">
