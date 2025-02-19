@@ -1,0 +1,43 @@
+.radio-card-group {
+    display: flex;
+    gap: 10px; /* Spacing between cards */
+}
+
+.radio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 250px;
+    height: 250px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.radio-card:hover {
+    border-color: #1b1d4b; /* Example hover color */
+    background-color: #f0f0f0;
+}
+
+/* Ensuring input is not visible */
+input[type="radio"] {
+    display: none;
+}
+
+/* Style for checked state */
+input[type="radio"]:checked + label {
+    border-color: #1b1d4b; /* Active border color */
+    background-color: #e0e0ff; /* Active background color */
+}
+
+#washing-icon,
+#dry-icon {
+    width: 50%;
+}

@@ -1,0 +1,32 @@
+nav {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1b1d4b;
+    padding-top: 30px;
+    padding-left: 10%;
+}
+
+a {
+    color: white;
+}
+
+#svg {
+    width: 100%;
+}
+
+#logo {
+    width: 60px;
+    position: relative;
+    bottom: 10px;
+}
+
+nav h1 {
+    color: #24bdf9;
+    font-size: 2rem;
+    padding-left: 20px;
+}
+
+#logo-div {
+    display: flex;
+}

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>Select Service</title>
     </head>
     <body>
@@ -24,7 +25,7 @@
 
         <?php include "navbar.php"; ?>
 
-        <h1>Select Mode and Time</h1>
+
         <?php
         $host = "localhost";
         $username = "root";
@@ -41,6 +42,9 @@
         $result = $conn->query($sql);
         ?>
 
+        <main>
+            <h1>New Reservation</h1>
+            <div class="white-container">
 
         <form action="validation.php" method="post">
             <label>Mode:</label><br>
@@ -82,7 +86,8 @@
               <input type="hidden" name="service" id="hiddenField" value="<?php echo $service; ?>" />
 
         </form>
-
+        </div>
+</main>
         <!-- only for setting default day to today -->
         <script>
             // Create a new Date object for today

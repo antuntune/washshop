@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="select_service.css">
         <title>Select Service</title>
     </head>
     <body>
@@ -24,19 +26,32 @@
 
         <?php include "navbar.php"; ?>
 
-        <h1>Select Service</h1>
+        <main>
+        <h1>New Reservation</h1>
+        <div class="white-container">
+            <img src="src/step1.png" alt="" class="step">
+
         <form action="select_mode.php" method="post">
 
-            <label>
-                    <input type="radio" name="service" value="washing">
-                    Washing
-                </label><br>
-                <label>
-                    <input type="radio" name="service" value="drying">
-                    Drying
-                </label>
+                <div class="radio-card-group">
+                        <input type="radio" id="option1" name="service" value="washing">
+                        <label for="option1" class="radio-card">
+                            <img src="src/washing.svg" alt="saafsas" id="washing-icon">
+                            <h3>Washing</h3>
+                        </label>
+
+                        <input type="radio" id="option2" name="service" value="drying">
+                        <label for="option2" class="radio-card">
+                            <img src="src/dry.svg" alt="saafsas"id="dry-icon">
+                            <h3>Drying</h3>
+                        </label>
+
+
+                    </div>
 
             <input type="submit">
         </form>
+        </div>
+        </main>
     </body>
 </html>
