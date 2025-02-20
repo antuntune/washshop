@@ -6,12 +6,14 @@
     <a href="reservations.php"><img src="src/logo.svg" alt="logo" id="logo"></a>
     <h1>Lavandería Brillante</h1>
     </div><div class="header-left">
-    <a href="reservations.php">Reservations</a>
+    <a href="reservations.php"><i class="fa-solid fa-calendar"> </i> Reservations</a>
 
     <div class="user">
-    <i class="fa-solid fa-circle-user"></i>
-    <span><?php echo $_SESSION["name"]; ?></span>
-    <a href="logout.php">LOGOUT</a></div>
+
+    <span><i class="fa-solid fa-circle-user"> </i> <?php echo $_SESSION[
+        "name"
+    ]; ?></span>
+    <a href="logout.php" class="logout">LOGOUT</a></div>
 </div>
 
 

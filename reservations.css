@@ -58,3 +58,11 @@ h3 {
     text-decoration: none;
     box-shadow: 1px 3px 0 rgba(0, 0, 0, 1);
 }
+
+input[type="submit"] {
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #1b1d4b;
+    color: white;
+}

@@ -51,7 +51,7 @@ $result = $conn->query($sql);
     <main>
         <div class="header">
     <h1>Your Reservations</h1>
-    <a href="select_service.php">Make reservation</a>
+    <a href="select_service.php"><i class="fa-solid fa-circle-plus">  </i> New reservation</a>
         </div>
     <div class="white-container">
         <div class="container">
