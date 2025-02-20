@@ -2,9 +2,11 @@
 <link rel="stylesheet" href="navbar.css">
 
 <nav>
+
     <div id="logo-div">
     <a href="reservations.php"><img src="src/logo.svg" alt="logo" id="logo"></a>
     <h1>Lavandería Brillante</h1>
+
     </div><div class="header-left">
     <a href="reservations.php"><i class="fa-solid fa-calendar"> </i> Reservations</a>
 
