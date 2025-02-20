@@ -62,6 +62,7 @@ $conn->close();
     <header>
         <div class="logo-div">
             <img src="src/logo.svg" alt="logo" id="logo">
+
             <h1>Lavandería Brillante</h1>
         </div>
         <img src="src/nav.svg" alt="logo" id="wave1">
@@ -88,6 +89,7 @@ $conn->close();
         </div>
         </div>
     </main>
+
 
 
 </body>

@@ -12,7 +12,9 @@
         <header>
             <div class="logo-div">
                 <img src="src/logo.svg" alt="logo" id="logo">
+
                 <h1>Lavandería Brillante</h1>
+
             </div>
             <img src="src/nav.svg" alt="logo" id="wave1">
             <img src="src/nav.svg" alt="logo" id="wave2">
@@ -36,6 +38,7 @@
                 $inputPassword = $_POST["password"];
                 $sql = "SELECT * FROM users WHERE name = '$inputName';";
                 $result = $conn->query($sql);
+
                 if ($result->num_rows > 0) {
                     echo "User with this username already exist.";
                 } else {
@@ -65,6 +68,7 @@
             ?>
             <h1>Registration</h1>
             <div class="white-container"><div class=container>
+
                 <form method="post" action="">
                     <label for="name">Name:</label>
                     <input type="text" class="text-input" id="name" name="name" required>
@@ -75,11 +79,13 @@
                     <input type="submit" value="Registration" class="button" id="registation">
                 </form>
 
+
                 <form method="" action="login.php">
                     <input type="submit" value="Login" class="button" id="login-button">
                 </form>
             </div>
             </div>
+
         </main>
     </body>
 </html>

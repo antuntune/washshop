@@ -55,13 +55,15 @@ main h1 {
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
-
     transition: 0.2;
 }
 #registation {
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 15px;
+    background-color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    transition: 0.2;
 }
 
 #login-button {
